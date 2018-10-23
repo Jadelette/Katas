@@ -12,17 +12,17 @@ public class FizzBuzzWithTests {
 
     public String translateNumber(int number) {
 
-        boolean isFizz = number%3==0;
-        boolean isBuzz = number%5==0;
-        boolean isFizzBuzz = isFizz&&isBuzz;
         String numberString = String.valueOf(number);
-        boolean isAlsoFizz = numberString.contains("3");
+        boolean isFizz = number%3==0 || numberString.contains("3");
+        boolean isBuzz = number%5==0 || numberString.contains("5");
+        boolean isFizzBuzz = isFizz && isBuzz;
+
 
         if (isFizzBuzz){
             return "FizzBuzz";
         }
 
-        else if(isFizz || isAlsoFizz) {
+        else if(isFizz) {
 
             return "Fizz";
 

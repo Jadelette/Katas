@@ -62,7 +62,7 @@ public class FizzBuzzWithTestsTest {
     }
 
     @Test
-    public void returnsFizzIfNumberContains3() {
+    public void returnsFizzIfnumberStringContains3() {
         //Given
         FizzBuzzWithTests fizz = new FizzBuzzWithTests();
 
@@ -71,6 +71,30 @@ public class FizzBuzzWithTestsTest {
 
         //Then
         Assert.assertEquals("Fizz", result);
+    }
+
+    @Test
+    public void returnsBuzzIfnumberStringContains5() {
+        //Given
+        FizzBuzzWithTests fizz = new FizzBuzzWithTests();
+
+        //When
+        String result = fizz.translateNumber(52);
+
+        //Then
+        Assert.assertEquals("Buzz", result);
+    }
+
+    @Test
+    public void returnsFizzBuzzIfnumberStringContains3And5() {
+        //Given
+        FizzBuzzWithTests fizz = new FizzBuzzWithTests();
+
+        //When
+        String result = fizz.translateNumber(53);
+
+        //Then
+        Assert.assertEquals("FizzBuzz", result);
     }
 
 
