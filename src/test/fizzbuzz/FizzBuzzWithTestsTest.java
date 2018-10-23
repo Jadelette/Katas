@@ -58,7 +58,19 @@ public class FizzBuzzWithTestsTest {
         String result = fizz.translateNumber(15);
 
         //Then
-        Assert.assertEquals("fizzbuzz.FizzBuzz", result);
+        Assert.assertEquals("FizzBuzz", result);
+    }
+
+    @Test
+    public void returnsFizzIfNumberContains3() {
+        //Given
+        FizzBuzzWithTests fizz = new FizzBuzzWithTests();
+
+        //When
+        String result = fizz.translateNumber(13);
+
+        //Then
+        Assert.assertEquals("Fizz", result);
     }
 
 

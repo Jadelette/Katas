@@ -15,12 +15,14 @@ public class FizzBuzzWithTests {
         boolean isFizz = number%3==0;
         boolean isBuzz = number%5==0;
         boolean isFizzBuzz = isFizz&&isBuzz;
+        String numberString = String.valueOf(number);
+        boolean isAlsoFizz = numberString.contains("3");
 
         if (isFizzBuzz){
-            return "fizzbuzz.FizzBuzz";
+            return "FizzBuzz";
         }
 
-        else if(isFizz) {
+        else if(isFizz || isAlsoFizz) {
 
             return "Fizz";
 
