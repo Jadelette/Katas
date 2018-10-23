@@ -1,3 +1,5 @@
+package fizzbuzz;
+
 public class FizzBuzz {
 
 
@@ -17,7 +19,7 @@ public class FizzBuzz {
      *
      * check if number is divisible by 5 and if so replace with Buzz and start loop over.
      *
-     * Check if it is divisible by both and print 'FizzBuzz!' if so.
+     * Check if it is divisible by both and print 'fizzbuzz.FizzBuzz!' if so.
      * */
 
 
@@ -30,7 +32,7 @@ public class FizzBuzz {
             boolean isFizzBuzz = isFizz && isBuzz;
 
             if (isFizzBuzz) {
-                System.out.println("FizzBuzz!");
+                System.out.println("fizzbuzz.FizzBuzz!");
             } else if (isFizz) {
                 System.out.println("Fizz!");
 

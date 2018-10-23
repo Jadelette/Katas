@@ -1,3 +1,6 @@
+package fizzbuzz;
+
+import fizzbuzz.FizzBuzzWithTests;
 import org.junit.Test;
 import org.junit.Assert;
 
@@ -32,6 +35,8 @@ public class FizzBuzzWithTestsTest {
         Assert.assertEquals("7", result);
     }
 
+    // 1 -10 : fizz buzz    11 - 200000000: chop meow
+
     @Test
     public void returnsBuzzIfDivisibleBy5() {
         //Given
@@ -53,7 +58,7 @@ public class FizzBuzzWithTestsTest {
         String result = fizz.translateNumber(15);
 
         //Then
-        Assert.assertEquals("FizzBuzz", result);
+        Assert.assertEquals("fizzbuzz.FizzBuzz", result);
     }
 
 

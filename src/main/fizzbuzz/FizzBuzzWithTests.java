@@ -1,3 +1,5 @@
+package fizzbuzz;
+
 public class FizzBuzzWithTests {
 
     public static void main(String[] args) {
@@ -15,7 +17,7 @@ public class FizzBuzzWithTests {
         boolean isFizzBuzz = isFizz&&isBuzz;
 
         if (isFizzBuzz){
-            return "FizzBuzz";
+            return "fizzbuzz.FizzBuzz";
         }
 
         else if(isFizz) {
