@@ -33,7 +33,6 @@ public class FizzBuzzWithTests {
         else {
             return String.valueOf(number);
 
-            //Homework: test and add new requirements. use .contains(). Change number to string and check if has 3 or 5
         }
     }
 }
