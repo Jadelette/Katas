@@ -132,7 +132,7 @@ public class Potter {
 
 
         int cost = 8*itemsInBasket.size();
-        System.out.println(cost);
+        System.out.println(cost + "blah");
 
        return cost;
     }
