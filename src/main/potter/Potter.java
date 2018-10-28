@@ -47,8 +47,10 @@ public class Potter {
                         System.out.println("Calculating cost of basket...");
                         running = false;
                         break;
+
                     default :
                         System.out.println("please type 'yes' or 'no'");
+                        break;
                                     }
                                 }
                             }
