@@ -20,11 +20,11 @@ public class Potter {
 
             if(scanner.hasNext()) {
                 String yesNo = scanner.next();
-                System.out.println(yesNo);
+
 
                 switch (yesNo) {
                     case "yes":
-                        System.out.println("which volume would you like to add?");
+                        System.out.println("which volume would you like to add? (Please select one option from 1-5)");
                         Scanner scanner2 = new Scanner(System.in);
                         if (scanner2.hasNextInt()) {
                             int volume = scanner2.nextInt();
