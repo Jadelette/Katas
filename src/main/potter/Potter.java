@@ -18,15 +18,15 @@ public class Potter {
         Potter potter = new Potter();
 
 
-        ArrayList<String> basket = new ArrayList<String>();
-        basket.add(0, "Volume 1");
-        basket.add(1, "Volume 1");
-        basket.add(2, "Volume 2");
-        basket.add(3, "Volume 2");
-        basket.add(4, "Volume 3");
-        basket.add(5, "Volume 3");
-        basket.add(6, "Volume 4");
-        basket.add(7, "Volume 5");
+        ArrayList<String> basket = new ArrayList<>();
+        basket.add("Volume 1");
+        basket.add("Volume 1");
+        basket.add("Volume 2");
+        basket.add("Volume 2");
+        basket.add("Volume 3");
+        basket.add("Volume 3");
+        basket.add("Volume 4");
+        basket.add("Volume 5");
         //get rid of these when real code is used
 
 
@@ -81,7 +81,7 @@ public class Potter {
                             }
                         //end of main method
 
-    public int calculateBasketTotal(ArrayList itemsInBasket){
+    public int calculateBasketTotal(ArrayList<String> itemsInBasket){
 
         int v1Copies = 0;
         int v2Copies = 0;
@@ -89,11 +89,9 @@ public class Potter {
         int v4Copies = 0;
         int v5Copies = 0;
 
-        for (Object item : itemsInBasket) {
-            String itemString = item.toString();
+        for (String item : itemsInBasket) {
 
-           switch (itemString) {
-
+           switch (item) {
                case "Volume 1":
                    v1Copies++;
                    break;
