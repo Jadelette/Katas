@@ -138,22 +138,21 @@ public class Potter {
 
         int set = 0;
 
-      /**  while (totalBooksLeft >0) {
+        while (totalBooksLeft >0) {
 
             //for (int volumeCopies : booksByCopy) {
-            for (int i = 0; booksByCopy.get(i) > 0; i++){
+            for (int i = 0; i <= booksByCopy.size(); i++){
                 if (booksByCopy.get(i) > 0) {
                     set ++;
-                    int newValue = booksByCopy.get(i) -1;
+                    int newValue = booksByCopy.get(i) --;
                     booksByCopy.add(i, newValue);
                     totalBooksLeft --;
-                    System.out.println(set);
-
 
                 }
-                sets.add(set);
-                set = 0;
 
+                sets.add(set);
+                System.out.println(set);
+                set = 0;
             }
 
 
@@ -161,7 +160,7 @@ public class Potter {
                 System.out.println(setList);
 
             }
-       Why won't this work?? Arrrgh!!! **/
+
 
         }
 
