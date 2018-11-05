@@ -141,20 +141,18 @@ public class Potter {
         while (totalBooksLeft >0) {
 
             //for (int volumeCopies : booksByCopy) {
-            for (int i = 0; i <= booksByCopy.size(); i++){
+            for (int i = 0; i < booksByCopy.size(); i++){
                 if (booksByCopy.get(i) > 0) {
                     set ++;
-                    int newValue = booksByCopy.get(i) --;
-                    booksByCopy.add(i, newValue);
+                    int newValue = booksByCopy.get(i) -1;
                     totalBooksLeft --;
-
                 }
 
-                sets.add(set);
-                System.out.println(set);
-                set = 0;
-            }
 
+            }
+            sets.add(set);
+            System.out.println(set);
+            set = 0;
 
             for (int setList : sets) {
                 System.out.println(setList);
@@ -163,13 +161,6 @@ public class Potter {
 
 
         }
-
-
-
-
-
-
-
 
 
         int cost = 8*itemsInBasket.size();
