@@ -3,6 +3,7 @@ package potter;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Scanner;
+import java.util.Collections;
 
 
 public class Potter {
@@ -129,12 +130,6 @@ public class Potter {
 
         ArrayList<Integer> sets = new ArrayList<Integer>();
 
-       /* ArrayList<Integer> booksByCopy = new ArrayList<Integer>();
-        booksByCopy.add(v1Copies);
-        booksByCopy.add(v2Copies);
-        booksByCopy.add(v3Copies);
-        booksByCopy.add(v4Copies);
-        booksByCopy.add(v5Copies); */
 
         int set = 0;
 
@@ -174,44 +169,51 @@ public class Potter {
             System.out.println(set);
             set = 0;
 
-
-
-
-
-            /* //for (int volumeCopies : booksByCopy) {
-            for (int i = 0; i < booksByCopy.size(); i++){
-                if (booksByCopy.get(i) > 0) {
-                    set ++;
-                    int newValue = booksByCopy.get(i) -1;
-                    totalBooksLeft --;
-                }
-
-
             }
+            //end of while loop
 
-            sets.add(set);
-            System.out.println(set);
-            set = 0;
 
-            for (int setList : sets) {
-                System.out.println(setList);
-                */
+        /**
+         * I know how many complete / incomplete sets are in the basket
+         * I need to find out how many sets have only 3 books in (Binary Search?)
+         * If there is a set of three books, check if there is also a set of five books
+         * If there is a set of three and a set of five - amend both values to four
+         * For each item in sets, switch statement calculate cost
+         */
 
-            }
+        Collections.sort(sets);
+
+        do {
+
+            if (sets.contains(3) && sets.contains(5)) {
+
+                int setOfThreeIndex = Collections.binarySearch(sets, 3);
+                System.out.println(setOfThreeIndex);
+                sets.remove(setOfThreeIndex);
+                sets.add(setOfThreeIndex, 4);
+                System.out.println(sets.get(setOfThreeIndex));
+
+                int setOfFiveIndex = Collections.binarySearch(sets, 5);
+                System.out.println(setOfFiveIndex);
+                sets.remove(setOfFiveIndex);
+                sets.add(setOfFiveIndex, 4);
+                System.out.println(sets.get(setOfFiveIndex));
+
+           }
+        } while (sets.contains(3));
+
+
         int cost = 8*itemsInBasket.size();
         System.out.println(cost);
 
         return cost;
 
         }
-
+        // end of method
 
 
     }
-
-
-
-//end of class
+    //end of class
 
 
 
