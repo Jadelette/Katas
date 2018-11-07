@@ -20,7 +20,7 @@ public class Potter {
 
 
         ArrayList<String> basket = new ArrayList<String>();
-        basket.add("Volume 1");
+        /*basket.add("Volume 1");
         basket.add("Volume 1");
         basket.add("Volume 1");
         basket.add("Volume 2");
@@ -33,13 +33,10 @@ public class Potter {
         basket.add("Volume 4");
         basket.add("Volume 5");
         basket.add("Volume 5");
-        //get rid of these when real code is used
+        //get rid of these when real code is used*/
 
 
-        potter.calculateBasketTotal(basket);
-
-
-        /*boolean running = true;
+        boolean running = true;
 
         while (running == true) {
 
@@ -82,10 +79,9 @@ public class Potter {
                                     }
                                 }
                             }
-*/
+              potter.calculateBasketTotal(basket);
 
-                            }
-                        //end of main method
+                            } //end of main method
 
     public float calculateBasketTotal(ArrayList<String> itemsInBasket){
 
@@ -237,16 +233,12 @@ public class Potter {
 
         }//end of foreach
 
-
-
-
         System.out.println("Basket Total: " + cost);
 
         return cost;
 
         }
         // end of method
-
 
     }
     //end of class
