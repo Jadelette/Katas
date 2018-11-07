@@ -20,35 +20,21 @@ public class Potter {
 
 
         ArrayList<String> basket = new ArrayList<String>();
-        /*basket.add("Volume 1");
-        basket.add("Volume 1");
-        basket.add("Volume 1");
-        basket.add("Volume 2");
-        basket.add("Volume 2");
-        basket.add("Volume 2");
-        basket.add("Volume 3");
-        basket.add("Volume 3");
-        basket.add("Volume 3");
-        basket.add("Volume 4");
-        basket.add("Volume 4");
-        basket.add("Volume 5");
-        basket.add("Volume 5");
-        //get rid of these when real code is used*/
-
 
         boolean running = true;
 
         while (running == true) {
 
-            System.out.println("Would you like to add a book to your basket? (yes/no)");
-            Scanner scanner = new Scanner(System.in);
+            System.out.println("Would you like to add a book to your basket? (y/n)");
+            Scanner addBooks = new Scanner(System.in);
 
-            if(scanner.hasNext()) {
-                String yesNo = scanner.next();
+            if(addBooks.hasNext()) {
+                String yesNo = addBooks.next();
+                String choice = yesNo.toUpperCase();
 
 
-                switch (yesNo) {
-                    case "yes":
+                switch (choice) {
+                    case "Y":
                         System.out.println("which volume would you like to add? (Please select one option from 1-5)");
                         Scanner scanner2 = new Scanner(System.in);
                         if (scanner2.hasNextInt()) {
@@ -64,7 +50,7 @@ public class Potter {
 
                         break;
 
-                    case "no":
+                    case "N":
                         System.out.println("Items in basket:");
                         for (String book : basket) {
                             System.out.println(book);}
@@ -74,7 +60,7 @@ public class Potter {
                         break;
 
                     default :
-                        System.out.println("please type 'yes' or 'no'");
+                        System.out.println("please type 'y' or 'n'");
                         break;
                                     }
                                 }
