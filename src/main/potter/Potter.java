@@ -1,9 +1,6 @@
 package potter;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Scanner;
-import java.util.Collections;
+import java.util.*;
 
 
 public class Potter {
@@ -19,13 +16,15 @@ public class Potter {
         Potter potter = new Potter();
 
 
-        ArrayList<String> basket = new ArrayList<String>();
+       // ArrayList<String> basket = new ArrayList<String>();
+          HashMap <String, Integer> basket = new HashMap<String, Integer>();
 
         boolean running = true;
 
+          System.out.println("Would you like to add a book to your basket? (y/n)");
+
         while (running == true) {
 
-            System.out.println("Would you like to add a book to your basket? (y/n)");
             Scanner addBooks = new Scanner(System.in);
 
             if(addBooks.hasNext()) {
@@ -36,24 +35,37 @@ public class Potter {
                 switch (choice) {
                     case "Y":
                         System.out.println("which volume would you like to add? (Please select one option from 1-5)");
-                        Scanner scanner2 = new Scanner(System.in);
-                        if (scanner2.hasNextInt()) {
-                            int volume = scanner2.nextInt();
+                        Scanner selectVolume = new Scanner(System.in);
+                        if (selectVolume.hasNextInt()) {
+                            int volume = selectVolume.nextInt();
+
                             if (volume <= 5 && volume >= 1) {
                                 String whichBook = "Volume " + volume;
-                                basket.add(whichBook);
-                                System.out.println("added to basket: " + whichBook);
-                            } else {
-                                System.out.println("Requested volume not recognised. Please try again.");
-                            }
-                        }
+                                System.out.println("How many copies of " + whichBook + " would you like to add?");
+                                Scanner howManycopies = new Scanner(System.in);
 
+                                if (howManycopies.hasNextInt()) {
+                                    int copiesToAdd = howManycopies.nextInt();
+                                    basket.put(whichBook, copiesToAdd);
+                                    System.out.printf("added to basket: %d copies of %s %n%n%n", copiesToAdd, whichBook);
+                                    System.out.println("would you  like to add another book to your basket?");
+                                } else {
+                                    System.out.println("invalid selection for number of copies; would you like to try again?");
+                                }
+                                //basket.add(whichBook);
+                                //System.out.println("added to basket: " + whichBook);
+                            } else {
+                                System.out.println("Requested volume not recognised. Would you like to try again.");
+                            } //end of nested if/else
+
+
+                        } //end of original if
                         break;
 
                     case "N":
                         System.out.println("Items in basket:");
-                        for (String book : basket) {
-                            System.out.println(book);}
+                        for (String book : basket.keySet()) {
+                            System.out.println(basket.get(book) + " copies of " + book);}
                             System.out.println();
                         System.out.println("Calculating cost of basket...");
                         running = false;
@@ -69,7 +81,7 @@ public class Potter {
 
                             } //end of main method
 
-    public float calculateBasketTotal(ArrayList<String> itemsInBasket){
+    public float calculateBasketTotal(HashMap<String, Integer> itemsInBasket){
 
         int v1Copies = 0;
         int v2Copies = 0;
@@ -77,27 +89,27 @@ public class Potter {
         int v4Copies = 0;
         int v5Copies = 0;
 
-        for (String item : itemsInBasket) {
+        for (String item : itemsInBasket.keySet()) {
 
            switch (item) {
                case "Volume 1":
-                   v1Copies++;
+                   v1Copies = itemsInBasket.get(item);
                    break;
 
                case "Volume 2":
-                   v2Copies++;
+                   v2Copies = itemsInBasket.get(item);
                    break;
 
                case "Volume 3":
-                   v3Copies++;
+                   v3Copies = itemsInBasket.get(item);
                    break;
 
                case "Volume 4":
-                   v4Copies++;
+                   v4Copies = itemsInBasket.get(item);
                    break;
 
                case "Volume 5":
-                   v5Copies++;
+                   v5Copies  = itemsInBasket.get(item);
                    break;
 
            }
@@ -187,7 +199,8 @@ public class Potter {
             }
         } while (sets.contains(3) && sets.contains(5));
 
-        System.out.println("Your basket contains " + sets.size() + " discounted sets.");
+
+            System.out.println("Your basket contains " + sets.size() + " sets.");
 
 
         float cost = 0;
