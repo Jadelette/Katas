@@ -120,18 +120,17 @@ public class Potter {
 
            }
 
-            System.out.println(item);
         }
 
-        System.out.println(v1Copies);
+        /*System.out.println(v1Copies);
         System.out.println(v2Copies);
         System.out.println(v3Copies);
         System.out.println(v4Copies);
-        System.out.println(v5Copies);
+        System.out.println(v5Copies);*/
 
         int totalBooksLeft = (v1Copies + v2Copies + v3Copies + v4Copies + v5Copies);
 
-        System.out.println(totalBooksLeft);
+        System.out.println("Your basket contains " + totalBooksLeft + " books.");
 
         ArrayList<Integer> sets = new ArrayList<Integer>();
 
@@ -171,7 +170,7 @@ public class Potter {
             }
 
             sets.add(set);
-            System.out.println(set);
+            //System.out.println(set);
             set = 0;
 
             }
@@ -192,45 +191,52 @@ public class Potter {
             if (sets.contains(3) && sets.contains(5)) {
 
                 int setOfThreeIndex = Collections.binarySearch(sets, 3);
-                System.out.println(setOfThreeIndex);
-                System.out.println(sets.get(setOfThreeIndex));
+                //System.out.println(setOfThreeIndex);
+                //System.out.println(sets.get(setOfThreeIndex));
                 sets.set(setOfThreeIndex, 4);
-                System.out.println(sets.get(setOfThreeIndex));
+                //System.out.println(sets.get(setOfThreeIndex));
 
                 int setOfFiveIndex = Collections.binarySearch(sets, 5);
-                System.out.println(setOfFiveIndex);
-                System.out.println(sets.get(setOfFiveIndex));
+                //System.out.println(setOfFiveIndex);
+                //System.out.println(sets.get(setOfFiveIndex));
                 sets.set(setOfFiveIndex, 4);
-                System.out.println(sets.get(setOfFiveIndex));
+                //System.out.println(sets.get(setOfFiveIndex));
 
             }
         } while (sets.contains(3) && sets.contains(5));
 
-        System.out.println(sets.size());
-
-        for (int setNew:sets) {
-            System.out.println(setNew);
-
-        }
+        System.out.println("Your basket contains " + sets.size() + " discounted sets.");
 
 
         float cost = 0;
 
-        for (int setNew1 :sets) {
+        for (int setNew:sets) {
+            switch (setNew) {
+                case 1:
+                    System.out.println("1 * single volume (£8) @ full price");
+                    cost +=8;
+                    break;
+                case 2:
+                    System.out.println("1 * set of 2 volumes (£16) @ 5% discount");
+                    cost += 15.20;
+                    break;
+                case 3:
+                    System.out.println("1 * set of 3 volumes (£24) @ 10% discount");
+                    cost += 21.60;
+                    break;
+                case 4:
+                    System.out.println("1 * set of 4 volumes (£32) @ 20% discount");
+                    cost += 25.60;
+                    break;
+                case 5:
+                    System.out.println("1 * set of 5 volumes (£40) @ 25% discount");
+                    cost += 30.00;
+                    break;
 
-        switch (setNew1) {
-            case 1: cost +=8;
-            break;
-            case 2: cost += 15.20;
-            break;
-            case 3: cost += 21.60;
-            break;
-            case 4: cost += 25.60;
-            break;
-            case 5: cost += 30.00;
-            break;
             }//end of switch
-        } //end of foreach
+
+        }//end of foreach
+
 
 
 
