@@ -34,7 +34,7 @@ public class Potter {
 
                 switch (choice) {
                     case "Y":
-                        System.out.println("which volume would you like to add? (Please select one option from 1-5)");
+                        System.out.println("Which volume would you like to add? (Please select one option from 1-5)");
                         Scanner selectVolume = new Scanner(System.in);
                         if (selectVolume.hasNextInt()) {
                             int volume = selectVolume.nextInt();
@@ -46,9 +46,15 @@ public class Potter {
 
                                 if (howManycopies.hasNextInt()) {
                                     int copiesToAdd = howManycopies.nextInt();
-                                    basket.put(whichBook, copiesToAdd);
-                                    System.out.printf("added to basket: %d copies of %s %n%n%n", copiesToAdd, whichBook);
-                                    System.out.println("would you  like to add another book to your basket?");
+
+                                    if (basket.containsKey(whichBook)) {
+                                        int updatedNumberOfCopies = basket.get(whichBook)+ copiesToAdd;
+                                        basket.put(whichBook, updatedNumberOfCopies);
+                                    } else {
+                                    basket.put(whichBook, copiesToAdd);}
+
+                                    System.out.printf("Added to basket: %d copies of %s %n%n%n", copiesToAdd, whichBook);
+                                    System.out.println("Would you  like to add another book to your basket?");
                                 } else {
                                     System.out.println("invalid selection for number of copies; would you like to try again?");
                                 }
