@@ -22,11 +22,16 @@ public class Potter {
         ArrayList<String> basket = new ArrayList<String>();
         basket.add("Volume 1");
         basket.add("Volume 1");
+        basket.add("Volume 1");
         basket.add("Volume 2");
         basket.add("Volume 2");
+        basket.add("Volume 2");
+        basket.add("Volume 3");
         basket.add("Volume 3");
         basket.add("Volume 3");
         basket.add("Volume 4");
+        basket.add("Volume 4");
+        basket.add("Volume 5");
         basket.add("Volume 5");
         //get rid of these when real code is used
 
@@ -82,7 +87,7 @@ public class Potter {
                             }
                         //end of main method
 
-    public int calculateBasketTotal(ArrayList<String> itemsInBasket){
+    public float calculateBasketTotal(ArrayList<String> itemsInBasket){
 
         int v1Copies = 0;
         int v2Copies = 0;
@@ -184,27 +189,52 @@ public class Potter {
         Collections.sort(sets);
 
         do {
-
             if (sets.contains(3) && sets.contains(5)) {
 
                 int setOfThreeIndex = Collections.binarySearch(sets, 3);
                 System.out.println(setOfThreeIndex);
-                sets.remove(setOfThreeIndex);
-                sets.add(setOfThreeIndex, 4);
+                System.out.println(sets.get(setOfThreeIndex));
+                sets.set(setOfThreeIndex, 4);
                 System.out.println(sets.get(setOfThreeIndex));
 
                 int setOfFiveIndex = Collections.binarySearch(sets, 5);
                 System.out.println(setOfFiveIndex);
-                sets.remove(setOfFiveIndex);
-                sets.add(setOfFiveIndex, 4);
+                System.out.println(sets.get(setOfFiveIndex));
+                sets.set(setOfFiveIndex, 4);
                 System.out.println(sets.get(setOfFiveIndex));
 
-           }
-        } while (sets.contains(3));
+            }
+        } while (sets.contains(3) && sets.contains(5));
+
+        System.out.println(sets.size());
+
+        for (int setNew:sets) {
+            System.out.println(setNew);
+
+        }
 
 
-        int cost = 8*itemsInBasket.size();
-        System.out.println(cost);
+        float cost = 0;
+
+        for (int setNew1 :sets) {
+
+        switch (setNew1) {
+            case 1: cost +=8;
+            break;
+            case 2: cost += 15.20;
+            break;
+            case 3: cost += 21.60;
+            break;
+            case 4: cost += 25.60;
+            break;
+            case 5: cost += 30.00;
+            break;
+            }//end of switch
+        } //end of foreach
+
+
+
+        System.out.println("Basket Total: " + cost);
 
         return cost;
 
