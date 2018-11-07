@@ -129,18 +129,56 @@ public class Potter {
 
         ArrayList<Integer> sets = new ArrayList<Integer>();
 
-        ArrayList<Integer> booksByCopy = new ArrayList<Integer>();
+       /* ArrayList<Integer> booksByCopy = new ArrayList<Integer>();
         booksByCopy.add(v1Copies);
         booksByCopy.add(v2Copies);
         booksByCopy.add(v3Copies);
         booksByCopy.add(v4Copies);
-        booksByCopy.add(v5Copies);
+        booksByCopy.add(v5Copies); */
 
         int set = 0;
 
         while (totalBooksLeft >0) {
 
-            //for (int volumeCopies : booksByCopy) {
+            if (v1Copies > 0) {
+                set++;
+                v1Copies--;
+                totalBooksLeft--;
+            }
+
+            if (v2Copies >0) {
+                set++;
+                v2Copies--;
+                totalBooksLeft--;
+            }
+
+            if (v3Copies >0) {
+                set++;
+                v3Copies--;
+                totalBooksLeft--;
+            }
+
+            if (v4Copies >0) {
+                set++;
+                v4Copies--;
+                totalBooksLeft--;
+            }
+
+            if (v5Copies >0) {
+                set++;
+                v5Copies--;
+                totalBooksLeft--;
+            }
+
+            sets.add(set);
+            System.out.println(set);
+            set = 0;
+
+
+
+
+
+            /* //for (int volumeCopies : booksByCopy) {
             for (int i = 0; i < booksByCopy.size(); i++){
                 if (booksByCopy.get(i) > 0) {
                     set ++;
@@ -150,26 +188,29 @@ public class Potter {
 
 
             }
+
             sets.add(set);
             System.out.println(set);
             set = 0;
 
             for (int setList : sets) {
                 System.out.println(setList);
+                */
 
             }
+        int cost = 8*itemsInBasket.size();
+        System.out.println(cost);
 
+        return cost;
 
         }
 
 
-        int cost = 8*itemsInBasket.size();
-        System.out.println(cost);
-
-       return cost;
-    }
 
     }
+
+
+
 //end of class
 
 
