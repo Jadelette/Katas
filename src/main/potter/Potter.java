@@ -16,12 +16,11 @@ public class Potter {
         Potter potter = new Potter();
 
 
-       // ArrayList<String> basket = new ArrayList<String>();
-          HashMap <String, Integer> basket = new HashMap<String, Integer>();
+       HashMap <String, Integer> basket = new HashMap<String, Integer>();
 
         boolean running = true;
 
-          System.out.println("Would you like to add a book to your basket? (y/n)");
+        System.out.println("Would you like to add a book to your basket? (y/n)");
 
         while (running == true) {
 
@@ -30,8 +29,6 @@ public class Potter {
             if(addBooks.hasNext()) {
                 String yesNo = addBooks.next();
                 String choice = yesNo.toUpperCase();
-
-
                 switch (choice) {
                     case "Y":
                         System.out.println("Which volume would you like to add? (Please select one option from 1-5)");
@@ -42,6 +39,7 @@ public class Potter {
                             if (volume <= 5 && volume >= 1) {
                                 String whichBook = "Volume " + volume;
                                 System.out.println("How many copies of " + whichBook + " would you like to add?");
+
                                 Scanner howManycopies = new Scanner(System.in);
 
                                 if (howManycopies.hasNextInt()) {
@@ -54,16 +52,16 @@ public class Potter {
                                     basket.put(whichBook, copiesToAdd);}
 
                                     System.out.printf("Added to basket: %d copies of %s %n%n%n", copiesToAdd, whichBook);
+
                                     System.out.println("Would you  like to add another book to your basket?");
-                                } else {
+                                }else {
                                     System.out.println("invalid selection for number of copies; would you like to try again?");
                                 }
                                 //basket.add(whichBook);
                                 //System.out.println("added to basket: " + whichBook);
-                            } else {
+                            }else {
                                 System.out.println("Requested volume not recognised. Would you like to try again.");
                             } //end of nested if/else
-
 
                         } //end of original if
                         break;
@@ -73,7 +71,7 @@ public class Potter {
                         for (String book : basket.keySet()) {
                             System.out.println(basket.get(book) + " copies of " + book);}
                             System.out.println();
-                        System.out.println("Calculating cost of basket...");
+                        System.out.printf("Calculating cost of basket... %n%n");
                         running = false;
                         break;
 
@@ -122,13 +120,7 @@ public class Potter {
 
         }
 
-        /*System.out.println(v1Copies);
-        System.out.println(v2Copies);
-        System.out.println(v3Copies);
-        System.out.println(v4Copies);
-        System.out.println(v5Copies);*/
-
-        int totalBooksLeft = (v1Copies + v2Copies + v3Copies + v4Copies + v5Copies);
+       int totalBooksLeft = (v1Copies + v2Copies + v3Copies + v4Copies + v5Copies);
 
         System.out.println("Your basket contains " + totalBooksLeft + " books.");
 
@@ -191,16 +183,10 @@ public class Potter {
             if (sets.contains(3) && sets.contains(5)) {
 
                 int setOfThreeIndex = Collections.binarySearch(sets, 3);
-                //System.out.println(setOfThreeIndex);
-                //System.out.println(sets.get(setOfThreeIndex));
                 sets.set(setOfThreeIndex, 4);
-                //System.out.println(sets.get(setOfThreeIndex));
 
                 int setOfFiveIndex = Collections.binarySearch(sets, 5);
-                //System.out.println(setOfFiveIndex);
-                //System.out.println(sets.get(setOfFiveIndex));
                 sets.set(setOfFiveIndex, 4);
-                //System.out.println(sets.get(setOfFiveIndex));
 
             }
         } while (sets.contains(3) && sets.contains(5));
@@ -238,7 +224,7 @@ public class Potter {
 
         }//end of foreach
 
-        System.out.println("Basket Total: " + cost);
+        System.out.printf("%n Basket Total: £%.2f %n", cost);
 
         return cost;
 
