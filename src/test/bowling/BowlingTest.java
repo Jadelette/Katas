@@ -68,7 +68,7 @@ public class BowlingTest {
     } //end of test 5
 
     @Test
-    public void canDetectSpareAndClaculateTotalIfNextRollIsFive() {
+    public void canDetectSpareAndCalculateTotalIfNextRollIsFive() {
         //Given
         Bowling game1 = new Bowling();
 
@@ -79,7 +79,17 @@ public class BowlingTest {
         Assert.assertEquals(15, result);
     }
 
+    @Test
+    public void canCalculateStrike() {
+        //Given
+        Bowling game1 = new Bowling();
 
+        //When
+        int result = game1.calculateStrike(8);
+
+        //Then
+        Assert.assertEquals(18, result);
+    }
 
 
 } //end of class
