@@ -15,8 +15,7 @@ public class Potter {
 
         Potter potter = new Potter();
 
-
-       HashMap <String, Integer> basket = new HashMap<String, Integer>();
+       HashMap<String, Integer> basket = new HashMap<>();
 
         boolean running = true;
 
@@ -233,7 +232,6 @@ public class Potter {
 
     }
     //end of class
-
 
 
 
