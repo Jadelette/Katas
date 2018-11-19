@@ -2,15 +2,10 @@ package bowling;
 
 public class Bowling {
 
-    private int total = 0;
+    //return 0 when no rolls
 
-    public void roll(int... rolls) {
-        for(int roll : rolls) {
-            total += roll;
-        }
-    }
-
-    public int getTotal() {
-        return total;
-    }
-}
+    public int getTotalScore() {
+        int totalScore = 0;
+        return totalScore;
+    } // end of get total score method
+} //end of class
