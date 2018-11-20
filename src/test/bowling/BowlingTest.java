@@ -91,5 +91,14 @@ public class BowlingTest {
         Assert.assertEquals(18, result);
     }
 
+    @Test
+    public void canBowlAFrame () {
+        //Given
+        Bowling game1 = new Bowling();
+        //When
+        int result = game1.bowlAFrame();
+        //
+    }
+
 
 } //end of class
